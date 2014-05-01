@@ -1,0 +1,18 @@
+DESCRIPCION DEL FLUJO DE LA APLICACION
+
+Cuando se quiere ingresar a la página web en este caso descrita como ejemplo "http://www.chat.com", entonces Django le crea un objeto de tipo HttpRequest, el cual representa la solicitud o "request" del http entrante que incluye diferentes encabezados y los datos enviados por los usuarios.
+
+Luego de este Request Django carga la apropiada vista pasándole el objeto HttpRequest como argumento; En esta aplicación puede ser: 
+	la vista de inicio de sesión
+	la vista de registro
+	la vista de inicio donde se visualizan los amigos
+	la vista de los diferentes grupos
+	la vista del chat general para cualquier amigo
+	la vista del chat para conversar en grupo.
+Así mismo, cada una de las vistas anteriores devuelve o retorna un objeto de tipo HttpResponse con el contenido que se desea visualizar, normalmente contenido html, en este caso se usó la función render_to_response a la cual se le pasaba contenido html el cual se encontraba en un archivo dentro de la carpeta templates, 
+
+De esta manera se mostraron las 6 diferentes vistas del chat donde Django usó objetos de tipo HttpResponse y HttpRequest los cuales están contenidos en el módulo django.http
+
+
+
+	
