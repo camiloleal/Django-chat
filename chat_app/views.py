@@ -1,20 +1,20 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 
-def inicioSesion(request):
-	return render_to_response('inicioSesion.html')
+def logIn(request):
+	return render_to_response('logIn.html')
 
-def registro(request):
-	return render_to_response('registro.html')
+def signUp(request):
+	return render_to_response('signUp.html')
 
-def inicio(request):
-	return render_to_response('inicio.html')
+def home(request):
+	return render_to_response('home.html')
 
-def grupos(request):
-	return render_to_response('grupos.html')
+def groups(request):
+	return render_to_response('groups.html')
 
-def chatGeneral(request):
-	return render_to_response('chatGeneral.html')
+def generalChat(request):
+	return render_to_response('generalChat.html')
 
-def chatGrupo(request):
-	return render_to_response('chatGrupo.html')
+def groupChat(request):
+	return render_to_response('groupChat.html')

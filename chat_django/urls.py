@@ -10,9 +10,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', inicioSesion),
-    url(r'^inicio/', inicio),
-    url(r'^grupos', grupos),
-    url(r'^chatgeneral', chatGeneral),
-    url(r'^chatgrupo', chatGrupo),
+    url(r'^', include('chat_app.urls')),
 )
