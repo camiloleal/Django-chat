@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta "charset=utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/css/base.css">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-up navbar-static-top" role="navigation">
+      <div class="container">
+        <img src="/static/images/chat-logo.png">
+        {% block nav %}{% endblock %}        
+      </div>
+    </nav>
+  </header>
+
+  {% block content %}
+
+  {% endblock content %}
+
+  <footer>    
+    <nav class="navbar navbar-down" role="navigation">
+      <div class="container">
+        <div>2014 © Chat</div>        
+      </div>
+    </nav>        
+  </footer>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

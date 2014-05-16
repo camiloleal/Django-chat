@@ -1,0 +1,22 @@
+{% extends "chat_app/base_site.html" %}
+
+{% block title %} Log In {% endblock %}
+
+{% block nav %}
+<a href="/signup" class="btn btn-primary" role="button">Registrarse</a>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<form class="form-login" role="form">
+		<h2 class="form-login-heading">Iniciar Sesión</h2>
+		<input type="email" class="form-control" placeholder="Email" required="" autofocus="">
+		<input type="password" class="form-control" placeholder="Contraseña" required="">
+		<label class="checkbox">
+			<input type="checkbox" value="remember-me"> Recordarme
+		</label>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
+		<a href="#">¿Olvidaste tu contraseña?</a>
+	</form>
+</div>
+{% endblock %}

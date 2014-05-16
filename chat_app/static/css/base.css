@@ -1,0 +1,135 @@
+body {
+  height: 100%;
+  margin: auto;
+  padding: 0px;
+  background-color: #eee; 
+}
+
+.navbar {
+  margin: 0px;
+  padding: 0px;
+  background-color: #3f4752;
+  color: white;
+}
+
+.navbar img {
+  height: 100px;
+}
+
+.navbar a{
+  margin-top: 30px;
+}
+
+
+/* LOGIN & SIGNUP ---------------- */
+.form-login, .form-signup {  
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-login, 
+.form-signup,
+.form-login-heading,
+.form-signup-heading,
+.form-login .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-login .checkbox {
+  font-weight: normal;
+}
+
+.form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signup button {
+  margin-top: 20px;
+}
+
+
+/* HOME -------------------------- */
+
+.sidebar {
+  min-height: 100px;
+  max-height: 500px;
+  width: 180px;
+  bottom: 0px;
+  top: 100px;  
+  overflow-y: auto;
+  background-color: #f5f5f5; 
+}
+
+.nav-bottons {
+  float: right;
+  margin-top: 50px;
+}
+
+.nav-tabs li:first-child {
+  border-right: 1px solid orange;
+}
+
+.nav-tabs a {
+  color: orange;
+}
+
+.section-chat {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #858585;
+  background-color: #BABABA;
+}
+
+.header-chat {
+  height: 73px;
+}
+
+.header-chat img {
+  padding: 0px;
+  width: 70px;
+  height: 70px;  
+}
+
+.header-chat p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: gray;
+}
+
+.header-btn {
+  padding: 0px;
+  margin-top: 30px;
+  float: right;
+}
+
+.header-btn .btn {
+  float: right;
+}
+
+.body-chat {
+  height: 300px;
+  background-color: white;
+  padding: 15px;
+}
+
+.footer-chat {
+  height: 60px;
+  margin-top: 10px;
+}
+
+
+/* FOOTER ------------------------ */
+
+footer {
+position: absolute;
+bottom: 0 !important;
+bottom: -1px;
+width: 100%;
+}
+
+
+

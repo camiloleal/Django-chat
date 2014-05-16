@@ -1,0 +1,133 @@
+{% extends "chat_app/base_site.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block nav %}
+<a href="/login" class="btn btn-primary" role="button">Cerrar Sesión</a>
+<div class="col-md-4 nav-bottons">
+	<div class="btn-group">
+		<button type="button" class="btn btn-warning">Amigos</button>
+		<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+			<span class="caret"></span>
+			<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Agregar</a></li>
+			<li><a href="#">Eliminar</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Listar amigos</a></li>
+		</ul>
+	</div>
+
+	<div class="btn-group">
+		<button type="button" class="btn btn-warning">Grupos</button>
+		<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+			<span class="caret"></span>
+			<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#">Crear</a></li>
+			<li><a href="#">Agregar amigos</a></li>
+			<li><a href="#">Eliminar</a></li>
+			<li class="divider"></li>
+			<li><a href="#">Listar grupos</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<div class="row main-chat">
+		<section class="col-md-2 section-tabs">
+			<div class="sidebar">	
+				<ul class="nav nav-tabs">
+					<li><a href="#friends" data-toggle="tab">Amigos</a></li>
+					<li><a href="#groups" data-toggle="tab">Grupos</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="friends">
+						<ul class="nav nav-sidebar">
+							<li><a href="#">Amigo 1</a></li>
+							<li><a href="#">Amigo 2</a></li>
+							<li><a href="#">Amigo 3</a></li>
+							<li><a href="#">Amigo 4</a></li>
+							<li><a href="#">Amigo 5</a></li>
+							<li><a href="#">Amigo 6</a></li>
+							<li><a href="#">Amigo 7</a></li>
+							<li><a href="#">Amigo 8</a></li>
+							<li><a href="#">Amigo 9</a></li>
+							<li><a href="#">Amigo 10</a></li>
+							<li><a href="#">Amigo 11</a></li>
+							<li><a href="#">Amigo 12</a></li>
+							<li><a href="#">Amigo 13</a></li>
+							<li><a href="#">Amigo 14</a></li>
+							<li><a href="#">Amigo 15</a></li>
+							<li><a href="#">Amigo 16</a></li>
+						</ul>
+					</div>
+
+					<div class="tab-pane fade" id="groups">
+						<ul class="nav nav-sidebar">
+							<li><a href="#">Grupo 1</a></li>
+							<li><a href="#">Grupo 2</a></li>
+							<li><a href="#">Grupo 3</a></li>
+							<li><a href="#">Grupo 4</a></li>
+							<li><a href="#">Grupo 5</a></li>
+							<li><a href="#">Grupo 6</a></li>
+							<li><a href="#">Grupo 7</a></li>
+							<li><a href="#">Grupo 8</a></li>
+							<li><a href="#">Grupo 9</a></li>
+							<li><a href="#">Grupo 10</a></li>
+							<li><a href="#">Grupo 11</a></li>
+							<li><a href="#">Grupo 12</a></li>
+							<li><a href="#">Grupo 13</a></li>
+							<li><a href="#">Grupo 14</a></li>
+							<li><a href="#">Grupo 15</a></li>
+							<li><a href="#">Grupo 16</a></li>
+						</ul>					
+					</div>
+				</div>			
+			</div>
+		</section>
+
+		<section class="col-md-6 section-chat">
+			<div class="header-chat">
+				<img src="/static/images/photo-icon.jpg" class="col-md-2">
+				<div class="col-md-7">
+					<p>Nombre de Usuario</p>
+					<p>Correo Electronico</p>
+				</div>
+				<div class="col-md-3 header-btn">
+					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Opciones
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Ver información</a></li>
+						<li><a href="#">Ignorar</a></li>
+						<li><a href="#">Eliminar</a></li>
+						<li><a href="#">Cerrar chat</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="body-chat">
+			</div>
+
+			<div class="footer-chat">
+				<div class="input-group">
+					<input type="text" class="form-control">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="button">Enviar</button>
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="col-md-4"></section>
+
+	</div>
+</div>
+{% endblock %}
