@@ -1,15 +1,16 @@
 from django.db import models
 
-
 class ChatUser(models.Model):
 	username = models.CharField(max_length=15)
 	password = models.CharField(max_length=15)
 	email = models.EmailField('e-mail', blank=True)
-	state = models.BooleanField("conected")
-
-
+	state = models.BooleanField("connected")
+			
 	def __unicode__(self):
 		return self.username
+
+	class Meta:
+		ordering = ['username']
 
 class Room(models.Model):
 	roomname = models.CharField(max_length=20)
@@ -26,4 +27,6 @@ class Message(models.Model):
 
 	def __unicode__(self):
 		return u'%s - %s' % (self.user, self.content)
+
+
 

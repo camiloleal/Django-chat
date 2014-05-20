@@ -3,7 +3,7 @@
 {% block title %} Home {% endblock %}
 
 {% block nav %}
-<a href="/login" class="btn btn-primary" role="button">Cerrar Sesión</a>
+<a href="/logout" class="btn btn-primary" role="button">Cerrar Sesión</a>
 <div class="col-md-4 nav-bottons">
 	<div class="btn-group">
 		<button type="button" class="btn btn-warning">Amigos</button>
@@ -95,9 +95,14 @@
 		<section class="col-md-6 section-chat">
 			<div class="header-chat">
 				<img src="/static/images/photo-icon.jpg" class="col-md-2">
-				<div class="col-md-7">
-					<p>Nombre de Usuario</p>
-					<p>Correo Electronico</p>
+				<div class="col-md-7 header-info">
+					{% if chatUser.state = True %}
+					<p id="connected">Conectado</p>
+					{% else %}
+					<p id="disconnected">Desconectado</p>
+					{% endif %}
+					<p>{{ chatUser.username }}</p>
+					<p>{{ chatUser.email }}</p>					
 				</div>
 				<div class="col-md-3 header-btn">
 					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Opciones

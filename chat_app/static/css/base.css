@@ -100,6 +100,15 @@ body {
   color: gray;
 }
 
+.header-info #connected, 
+.header-info #disconnected {  
+  float: right;
+}
+
+.header-info #connected {
+  color: green;
+}
+
 .header-btn {
   padding: 0px;
   margin-top: 30px;
