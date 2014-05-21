@@ -96,7 +96,7 @@
 			<div class="header-chat">
 				<img src="/static/images/photo-icon.jpg" class="col-md-2">
 				<div class="col-md-7 header-info">
-					{% if user.state = True %}
+					{% if user.is_authenticated %}
 					<p id="connected">Conectado</p>
 					{% else %}
 					<p id="disconnected">Desconectado</p>

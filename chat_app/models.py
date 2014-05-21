@@ -3,15 +3,15 @@ from django.contrib.auth.models import User
 
 class ChatProfile(models.Model):
 	user = models.ForeignKey(User, unique=True, blank=True, null=True)
-	state = models.BooleanField("connected")
-	success_url = ('/login/')
-
+	state = models.BooleanField(True)
+	#friends = models.ManyToManyField(User)
+	
 	def __unicode__(self):
 		return self.user.username
 
 class Room(models.Model):
 	roomname = models.CharField(max_length=20)
-	users = models.ManyToManyField(User)
+	#users = models.ManyToManyField(User)
 
 	def __unicode__(self):
 		return self.name
