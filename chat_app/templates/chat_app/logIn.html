@@ -3,11 +3,19 @@
 {% block title %} Log In {% endblock %}
 
 {% block nav %}
-<a href="/signup" class="btn btn-primary" role="button">Registrarse</a>
+	{% if user.is_authenticated %}
+	<a href="{%url 'chat_app:home'%}" class="btn btn-primary" role="button">Home</a>
+	{% else %}
+	<a href="{%url 'chat_app:signUp'%}" class="btn btn-primary" role="button">Registrarse</a>
+	{% endif %}
 {% endblock %}
 
 {% block content %}
 <div class="container">
+	{% if user.is_authenticated %}
+	<p>Ya se encuentra logueado</p>
+
+	{% else %}
 	<form action="" method="POST" class="form-login" role="form">{% csrf_token %}
 		<h2 class="form-login-heading">Iniciar Sesión</h2>
 		<input name="username" type="text" class="form-control" placeholder="Usuario" required="" autofocus="">
@@ -18,5 +26,6 @@
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
 		<a href="#">¿Olvidaste tu contraseña?</a>
 	</form>
+	{% endif %}
 </div>
 {% endblock %}

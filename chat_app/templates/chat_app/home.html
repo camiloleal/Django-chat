@@ -96,13 +96,13 @@
 			<div class="header-chat">
 				<img src="/static/images/photo-icon.jpg" class="col-md-2">
 				<div class="col-md-7 header-info">
-					{% if chatUser.state = True %}
+					{% if user.state = True %}
 					<p id="connected">Conectado</p>
 					{% else %}
 					<p id="disconnected">Desconectado</p>
 					{% endif %}
-					<p>{{ chatUser.username }}</p>
-					<p>{{ chatUser.email }}</p>					
+					<p>{{ user.username }}</p>
+					<p>{{ user.email }}</p>					
 				</div>
 				<div class="col-md-3 header-btn">
 					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Opciones

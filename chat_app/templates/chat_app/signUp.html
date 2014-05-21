@@ -3,18 +3,32 @@
 {% block title %} Sign Up {% endblock %}
 
 {% block nav %}
-<a href="/login" class="btn btn-primary" role="button">Iniciar Sesión</a>
+{% if user.is_authenticated %}
+	<a href="{%url 'chat_app:home'%}" class="btn btn-primary" role="button">Home</a>
+	{% else %}
+	<a href="{%url 'chat_app:logIn'%}" class="btn btn-primary" role="button">Iniciar Sesión</a>
+	{% endif %}
 {% endblock %}
 
 {% block content %}
 <div class="container">
-	<form class="form-signup" role="form">
-		<h2 class="form-signup-heading">Registrarse</h2>
-		<input type="text" class="form-control" placeholder="Nombre de Usuario" required="">
-		<input type="email" class="form-control" placeholder="Email" required="" autofocus="">
-		<input type="password" class="form-control" placeholder="Contraseña" required="">
-		<input type="password" class="form-control" placeholder="Repetir Contraseña" required="">			
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>		
-	</form>
+	{% if user.is_authenticated %}
+	<p>Termine la sesión pare registrar un usuario nuevo</p>
+
+	{% else %}
+		{% if registered = True %}	
+		<a href="{%url 'chat_app:logIn'%}">Registro Exitoso, Clic para ingresar</a>
+
+		{% else %}
+		<form method="POST" action="/signup/" class="form-signup" role="form">{% csrf_token %}
+			<h2 class="form-signup-heading">Registrarse</h2>
+			<input name="username" type="text" class="form-control" placeholder="Nombre de Usuario" required="">
+			<input name="email" type="email" class="form-control" placeholder="Email" required="" autofocus="">
+			<input name="password" type="password" class="form-control" placeholder="Contraseña" required="">
+			<input name="password" type="password" class="form-control" placeholder="Repetir Contraseña" required="">			
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>	
+		</form>
+		{% endif %}
+	{% endif %}
 </div>
 {% endblock %}

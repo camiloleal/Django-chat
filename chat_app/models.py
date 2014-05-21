@@ -1,27 +1,27 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class ChatUser(models.Model):
-	username = models.CharField(max_length=15)
-	password = models.CharField(max_length=15)
-	email = models.EmailField('e-mail', blank=True)
+class ChatProfile(models.Model):
+	user = models.ForeignKey(User, unique=True, blank=True, null=True)
 	state = models.BooleanField("connected")
-			
-	def __unicode__(self):
-		return self.username
+	success_url = ('/login/')
 
-	class Meta:
-		ordering = ['username']
+	def __unicode__(self):
+		return self.user.username
 
 class Room(models.Model):
 	roomname = models.CharField(max_length=20)
-	users = models.ManyToManyField(ChatUser)
+	users = models.ManyToManyField(User)
 
 	def __unicode__(self):
 		return self.name
 
+	class Meta:
+		ordering = ['roomname']
+
 class Message(models.Model):
 	room = models.ForeignKey(Room)
-	user = models.ForeignKey(ChatUser)
+	user = models.ForeignKey(User)
 	content = models.TextField()	
 	datetime = models.DateTimeField(auto_now_add=True)
 
