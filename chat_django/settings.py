@@ -93,6 +93,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = "/home"
 # Redirect when login is not correct.
 LOGIN_URL = '/login'
+# Logout
 LOGOUT_URL = "/logout"
 
-AUTH_PROFILE_MODULE = 'chat_app.Profile'
+AUTH_PROFILE_MODULE = 'chat_app.UserProfile'

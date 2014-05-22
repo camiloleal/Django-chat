@@ -13,7 +13,6 @@ def logIn(request):
 def signUp(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
-        profile_form = ProfileForm(request.POST)
         registered = False
 
         if user_form.is_valid(): 
@@ -23,9 +22,10 @@ def signUp(request):
             
             user = User.objects.create_user(username, email, password)            
             user.save()
- 
+            registered = True
+            
             return render_to_response('chat_app/signUp.html', 
-            	{'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+            	{'user_form': user_form, 'registered': registered})
     else:
         user_form = UserForm()
  
