@@ -3,7 +3,7 @@
 {% block title %} Home {% endblock %}
 
 {% block nav %}
-<a href="/logout" class="btn btn-primary" role="button">Cerrar Sesión</a>
+<a href="{%url 'chat_app:logOut'%}" class="btn btn-primary" role="button">Cerrar Sesión</a>
 <div class="col-md-4 nav-bottons">
 	<div class="btn-group">
 		<button type="button" class="btn btn-warning">Amigos</button>
@@ -49,22 +49,11 @@
 				<div class="tab-content">
 					<div class="tab-pane fade in active" id="friends">
 						<ul class="nav nav-sidebar">
-							<li><a href="#">Amigo 1</a></li>
-							<li><a href="#">Amigo 2</a></li>
-							<li><a href="#">Amigo 3</a></li>
-							<li><a href="#">Amigo 4</a></li>
-							<li><a href="#">Amigo 5</a></li>
-							<li><a href="#">Amigo 6</a></li>
-							<li><a href="#">Amigo 7</a></li>
-							<li><a href="#">Amigo 8</a></li>
-							<li><a href="#">Amigo 9</a></li>
-							<li><a href="#">Amigo 10</a></li>
-							<li><a href="#">Amigo 11</a></li>
-							<li><a href="#">Amigo 12</a></li>
-							<li><a href="#">Amigo 13</a></li>
-							<li><a href="#">Amigo 14</a></li>
-							<li><a href="#">Amigo 15</a></li>
-							<li><a href="#">Amigo 16</a></li>
+							
+							{% for friend in user.get_profile.friends.all %}
+							<li><a href="#">{{ friend.user.username }}</a></li>
+							{% endfor %}
+
 						</ul>
 					</div>
 
@@ -96,11 +85,11 @@
 			<div class="header-chat">
 				<img src="/static/images/photo-icon.jpg" class="col-md-2">
 				<div class="col-md-7 header-info">
-					{% if user.is_authenticated %}
+					{% if user.get_profile.state %}
 					<p id="connected">Conectado</p>
 					{% else %}
 					<p id="disconnected">Desconectado</p>
-					{% endif %}
+					{% endif %}					
 					<p>{{ user.username }}</p>
 					<p>{{ user.email }}</p>					
 				</div>

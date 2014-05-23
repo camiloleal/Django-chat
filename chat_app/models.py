@@ -3,14 +3,13 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
-	user = models.ForeignKey(User, unique=True)
+	user = models.OneToOneField(User)
 	state = models.BooleanField('Conected')
-	#friends = models.ManyToManyField(User)
+	friends = models.ManyToManyField('self', symmetrical=True,  blank=True)
 
 	def create_user_profile(sender, instance, created, **kwargs):
 		if created:
 			UserProfile.objects.create(user=instance, state=False)
-
 	post_save.connect(create_user_profile, sender=User)
 	
 	def __unicode__(self):
