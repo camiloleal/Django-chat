@@ -37,5 +37,6 @@ def signUp(request):
 
 @login_required()
 def home(request):
+    registered_users = User.objects.all()
     return render_to_response('chat_app/home.html', 
-        {'user': request.user}, context_instance=RequestContext(request))
+        {'user': request.user, 'registered_users': registered_users}, context_instance=RequestContext(request))

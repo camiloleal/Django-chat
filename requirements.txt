@@ -1,3 +1,5 @@
 django==1.6.4
 south==0.8.4
 psycopg2==2.5.3
+libpq-dev
+python-dev
