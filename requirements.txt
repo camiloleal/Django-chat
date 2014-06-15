@@ -1,5 +1,9 @@
-django==1.6.4
-south==0.8.4
+Django==1.6.4
+South==0.8.4
+argparse==1.2.1
+django-extensions==1.3.8
 psycopg2==2.5.3
-libpq-dev
-python-dev
+pydot==1.0.2
+pyparsing==1.5.7
+six==1.7.2
+wsgiref==0.1.2

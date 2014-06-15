@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'chat_app',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'chatdb',
         'USER': 'chatdb_user',
-        'PASSWORD': '0000',
+        'PASSWORD': 'pass',
         'HOST': 'localhost',
         'PORT': '5432',
     }

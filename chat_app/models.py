@@ -11,6 +11,11 @@ class UserProfile(models.Model):
 		if created:
 			UserProfile.objects.create(user=instance, state=False)
 	post_save.connect(create_user_profile, sender=User)
+
+	def add_friend(self):
+		self.state = False
+		self.save
+		print "entra"
 	
 	def __unicode__(self):
 		return self.user.username
@@ -27,7 +32,7 @@ class Room(models.Model):
 
 class Message(models.Model):
 	room = models.ForeignKey(Room)
-	user = models.ForeignKey(User)
+	user = models.ForeignKey(UserProfile)
 	content = models.TextField()	
 	datetime = models.DateTimeField(auto_now_add=True)
 

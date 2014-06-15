@@ -91,7 +91,10 @@
 					<p id="disconnected">Desconectado</p>
 					{% endif %}					
 					<p>{{ user.username }}</p>
-					<p>{{ user.email }}</p>					
+					<p>{{ user.email }}</p>	
+
+						
+
 				</div>
 				<div class="col-md-3 header-btn">
 					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Opciones
@@ -160,6 +163,8 @@
 	      <input type="checkbox" name="friends" id="option{{friend.id}}" value="{{friend.user.username}}">
 	      <label for="option{{friend.id}}"><b>{{friend.user.username}}</b></label><br/>
 	      {% endfor %}
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
