@@ -5,12 +5,23 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from chat_app.forms import *
 from chat_app.models import *
+from chat_app.student import *
+from chat_app.store import *
+from chat_app.update import *
+
+vector = []
+update = Update(vector)
+update.start()
 
 def logIn(request):
+    store = Store()
+    store.save_data(vector)
     login(request, user)
     return render_to_response('chat_app/logIn.html')
 
+
 def signUp(request):
+    vector = update.get_vector()
     if request.method == 'POST':
         user_form = UserForm(request.POST)
         registered = False
@@ -19,10 +30,12 @@ def signUp(request):
             username = user_form.cleaned_data["username"]
             password = user_form.cleaned_data["password"]
             email = user_form.cleaned_data["email"]
-            
-            user = User.objects.create_user(username, email, password)            
-            user.save()
-
+            student = Student()
+            student.set_username(username)
+            student.set_password(password)
+            student.set_email(email)
+            vector.append(student)
+            print vector
             registered = True
             
             return render_to_response('chat_app/signUp.html', 
